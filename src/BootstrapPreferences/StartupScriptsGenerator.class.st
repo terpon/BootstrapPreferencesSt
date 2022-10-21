@@ -28,7 +28,7 @@ StartupScriptsGenerator >> createAction: aSelector from: anObject [
 StartupScriptsGenerator >> createCode: aMethod from: anObject [
 | source code block |
 	source := aMethod sourceCode lines allButFirst.
-	code := Smalltalk platform lineEnding join: source.
+	code := String cr join: source.
 	block := Smalltalk compiler evaluate: ('[ ', code, ' ]' ).
 	^ block
 ]
