@@ -16,9 +16,10 @@ Class {
 
 { #category : #'private - generating' }
 StartupScriptsGenerator >> createAction: aSelector from: anObject [
-| method once code |
+| method once protocol code |
 	method := anObject class methodNamed: aSelector.
-	once := method protocol asString endsWith: 'once' caseSensitive: false.
+	protocol := anObject class protocolOfSelector: aSelector.
+	once := protocol name asString endsWith: 'once' caseSensitive: false.
 	code := self createCode: method from: anObject.
 	
 	^ StartupAction name: aSelector asString code: code runOnce: once
