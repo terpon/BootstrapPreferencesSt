@@ -29,7 +29,8 @@ StartupScriptsSource >> fetchDarkerDawnTheme [
 		baseline: 'DarkerDawnTheme';
 		repository: 'github://terpon/PharoDarkerDawnTheme/src';
 		load.
-	DarkerDawnTheme beCurrent.
+	Smalltalk globals at: #DarkerDawnTheme ifPresent: [ :theme | theme beCurrent ].
+
 ]
 
 { #category : #scripts }
