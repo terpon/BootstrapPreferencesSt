@@ -1,1 +1,1 @@
-Package { #name : #BootstrapPreferences }
+Package { #name : 'BootstrapPreferences' }

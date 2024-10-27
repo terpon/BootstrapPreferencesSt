@@ -4,17 +4,13 @@ Holder of methods to be transformed into startup scripts.
 Modification can be made inside the image and stored using source control.
 "
 Class {
-	#name : #StartupScriptsSource,
-	#superclass : #Object,
-	#category : #BootstrapPreferences
+	#name : 'StartupScriptsSource',
+	#superclass : 'Object',
+	#category : 'BootstrapPreferences',
+	#package : 'BootstrapPreferences'
 }
 
-{ #category : #scripts }
-StartupScriptsSource >> author [
-	^ #( setAuthor )
-]
-
-{ #category : #'settings - once' }
+{ #category : 'settings - once' }
 StartupScriptsSource >> fetchDarkIconSet [
 | dark |
 	dark := ThemeIcons named: 'darkIdea'.
@@ -23,7 +19,7 @@ StartupScriptsSource >> fetchDarkIconSet [
 	ThemeIcons current: dark.
 ]
 
-{ #category : #'settings - once' }
+{ #category : 'settings - once' }
 StartupScriptsSource >> fetchDarkerDawnTheme [
 	Metacello new 
 		baseline: 'DarkerDawnTheme';
@@ -33,22 +29,17 @@ StartupScriptsSource >> fetchDarkerDawnTheme [
 
 ]
 
-{ #category : #scripts }
+{ #category : 'scripts' }
 StartupScriptsSource >> fonts [
 	^ #( setFonts )
 ]
 
-{ #category : #settings }
-StartupScriptsSource >> setAuthor [
-	Author fullName: 'terpon'.
-]
-
-{ #category : #'settings - once' }
+{ #category : 'settings - once' }
 StartupScriptsSource >> setDarkTheme [
 	PharoDarkTheme beCurrent.
 ]
 
-{ #category : #'settings - once' }
+{ #category : 'settings - once' }
 StartupScriptsSource >> setFonts [
 	FreeTypeSystemSettings loadFt2Library: true.
 	FreeTypeFontProvider current updateFromSystem.
@@ -60,7 +51,7 @@ StartupScriptsSource >> setFonts [
 	StandardFonts windowTitleFont: (LogicalFont familyName: 'Source Sans Pro' pointSize: 11).
 ]
 
-{ #category : #scripts }
+{ #category : 'scripts' }
 StartupScriptsSource >> theme [
 	^ #( setDarkTheme fetchDarkIconSet fetchDarkerDawnTheme )
 ]

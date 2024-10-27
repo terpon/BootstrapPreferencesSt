@@ -9,12 +9,13 @@ Method names inside protocols ending with 'once' will create actions only run fo
 Scripts for specific version should be put in specific protocols.
 "
 Class {
-	#name : #StartupScriptsGenerator,
-	#superclass : #Object,
-	#category : #BootstrapPreferences
+	#name : 'StartupScriptsGenerator',
+	#superclass : 'Object',
+	#category : 'BootstrapPreferences',
+	#package : 'BootstrapPreferences'
 }
 
-{ #category : #'private - generating' }
+{ #category : 'private - generating' }
 StartupScriptsGenerator >> createAction: aSelector from: anObject [
 | method once protocol code |
 	method := anObject class methodNamed: aSelector.
@@ -25,7 +26,7 @@ StartupScriptsGenerator >> createAction: aSelector from: anObject [
 	^ StartupAction name: aSelector asString code: code runOnce: once
 ]
 
-{ #category : #'private - generating' }
+{ #category : 'private - generating' }
 StartupScriptsGenerator >> createCode: aMethod from: anObject [
 | source code block |
 	source := aMethod sourceCode lines allButFirst.
@@ -34,7 +35,7 @@ StartupScriptsGenerator >> createCode: aMethod from: anObject [
 	^ block
 ]
 
-{ #category : #'private - generating' }
+{ #category : 'private - generating' }
 StartupScriptsGenerator >> createScript: aSelector from: anObject [
 | loader scriptName selectors actions |
 	loader := StartupPreferencesLoader default.
@@ -49,7 +50,7 @@ StartupScriptsGenerator >> createScript: aSelector from: anObject [
 	
 ]
 
-{ #category : #generating }
+{ #category : 'generating' }
 StartupScriptsGenerator >> createScriptsFrom: aClass [
 | instance scripts |
 	instance := aClass new.
@@ -58,7 +59,7 @@ StartupScriptsGenerator >> createScriptsFrom: aClass [
 	
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 StartupScriptsGenerator >> run [
 <script: 'self new run'>
 	self createScriptsFrom: StartupScriptsSource.
