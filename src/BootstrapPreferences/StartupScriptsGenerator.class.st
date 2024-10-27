@@ -35,8 +35,11 @@ StartupScriptsGenerator >> createCode: aMethod from: anObject [
 
 { #category : #'private - generating' }
 StartupScriptsGenerator >> createScript: aSelector from: anObject [
-| scriptName selectors actions |
+| loader scriptName selectors actions |
+	loader := StartupPreferencesLoader default.
+
 	scriptName := (aSelector asString), '.st'.
+	((loader preferencesGeneralFolder) / scriptName) ensureDelete.
 	
 	selectors := anObject perform: aSelector.
 	actions := selectors collect: [ :selector | self createAction: selector from: anObject ].
