@@ -23,7 +23,7 @@ StartupScriptsSource >> fetchDarkIconSet [
 StartupScriptsSource >> fetchDarkerDawnTheme [
 	Metacello new 
 		baseline: 'DarkerDawnTheme';
-		repository: 'github://terpon/PharoDarkerDawnTheme/src';
+		repository: 'github://terpon/PharoDarkerDawnTheme:main/src';
 		load.
 	Smalltalk globals at: #DarkerDawnTheme ifPresent: [ :theme | theme beCurrent ].
 
