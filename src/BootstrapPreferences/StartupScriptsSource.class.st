@@ -14,7 +14,7 @@ Class {
 StartupScriptsSource >> fetchDarkIconSet [
 | dark |
 	dark := ThemeIcons named: 'darkIdea'.
-	dark url: 'https://github.com/terpon/pharo-icon-packs/archive/refs/tags/v0.0.1-darkIdea.zip'.
+	dark url: 'https://github.com/terpon/pharo-icon-packs/archive/refs/tags/v0.0.2-darkIdea.zip'.
 	dark downloadFromUrl.
 	ThemeIcons current: dark.
 ]
