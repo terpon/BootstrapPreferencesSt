@@ -36,7 +36,7 @@ StartupScriptsSource >> fonts [
 
 { #category : 'settings - once' }
 StartupScriptsSource >> setDarkTheme [
-	PharoDarkTheme beCurrent.
+	DarkBlueTheme beCurrent.
 ]
 
 { #category : 'settings - once' }
