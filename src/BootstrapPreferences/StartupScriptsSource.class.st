@@ -44,11 +44,13 @@ StartupScriptsSource >> setFonts [
 	FreeTypeSystemSettings loadFt2Library: true.
 	FreeTypeFontProvider current updateFromSystem.
 	
-	StandardFonts defaultFont: (LogicalFont familyName: 'Source Sans Pro' pointSize: 10) forceNotBold.
+	StandardFonts defaultFont: (LogicalFont familyName: 'Input Sans' pointSize: 10 stretchValue: LogicalFont stretchCondensed weightValue: LogicalFont weightRegular slantValue: 0).	
 	GraphicFontSettings resetAllFontToDefault.
 	
-	StandardFonts codeFont: (LogicalFont familyName: 'Input Sans' pointSize: 10).	
-	StandardFonts windowTitleFont: (LogicalFont familyName: 'Source Sans Pro' pointSize: 11).
+	StandardFonts buttonFont: (LogicalFont familyName: 'Input Sans' pointSize: 10 stretchValue: LogicalFont stretchCondensed weightValue: LogicalFont weightBlack slantValue: 0).	
+	StandardFonts codeFont: (LogicalFont familyName: 'Input Sans' pointSize: 10 stretchValue: LogicalFont stretchRegular weightValue: LogicalFont weightMedium slantValue: 0).	
+	StandardFonts windowTitleFont: (LogicalFont familyName: 'Input Sans' pointSize: 10 stretchValue: LogicalFont stretchRegular weightValue: LogicalFont weightMedium slantValue: 0).	
+
 ]
 
 { #category : 'scripts' }
