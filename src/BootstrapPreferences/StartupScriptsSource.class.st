@@ -36,21 +36,44 @@ StartupScriptsSource >> fonts [
 
 { #category : 'settings - once' }
 StartupScriptsSource >> setDarkTheme [
-	DarkBlueTheme beCurrent.
+
+	Smalltalk globals
+		at: #DarkBlueTheme
+		ifPresent: [ :theme | theme beCurrent ]
 ]
 
 { #category : 'settings - once' }
 StartupScriptsSource >> setFonts [
+
 	FreeTypeSystemSettings loadFt2Library: true.
 	FreeTypeFontProvider current updateFromSystem.
-	
-	StandardFonts defaultFont: (LogicalFont familyName: 'Input Sans' pointSize: 10 stretchValue: LogicalFont stretchCondensed weightValue: LogicalFont weightRegular slantValue: 0).	
-	GraphicFontSettings resetAllFontToDefault.
-	
-	StandardFonts buttonFont: (LogicalFont familyName: 'Input Sans' pointSize: 10 stretchValue: LogicalFont stretchCondensed weightValue: LogicalFont weightBlack slantValue: 0).	
-	StandardFonts codeFont: (LogicalFont familyName: 'Input Sans' pointSize: 10 stretchValue: LogicalFont stretchRegular weightValue: LogicalFont weightMedium slantValue: 0).	
-	StandardFonts windowTitleFont: (LogicalFont familyName: 'Input Sans' pointSize: 10 stretchValue: LogicalFont stretchRegular weightValue: LogicalFont weightMedium slantValue: 0).	
 
+	StandardFonts defaultFont: (LogicalFont
+			 familyName: 'Input Sans'
+			 pointSize: 10
+			 stretchValue: LogicalFont stretchCondensed
+			 weightValue: LogicalFont weightRegular
+			 slantValue: 0).
+	GraphicFontSettings resetAllFontToDefault.
+
+	StandardFonts buttonFont: (LogicalFont
+			 familyName: 'Input Sans'
+			 pointSize: 10
+			 stretchValue: LogicalFont stretchCondensed
+			 weightValue: LogicalFont weightMedium
+			 slantValue: 0).
+	StandardFonts codeFont: (LogicalFont
+			 familyName: 'Input Sans'
+			 pointSize: 10
+			 stretchValue: LogicalFont stretchRegular
+			 weightValue: LogicalFont weightRegular
+			 slantValue: 0).
+	StandardFonts windowTitleFont: (LogicalFont
+			 familyName: 'Input Sans'
+			 pointSize: 10
+			 stretchValue: LogicalFont stretchRegular
+			 weightValue: LogicalFont weightMedium
+			 slantValue: 0)
 ]
 
 { #category : 'scripts' }
